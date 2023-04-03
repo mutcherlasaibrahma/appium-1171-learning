@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="mobileautomation.Appium.DragAndDrop">
+      <class name="mobileautomation.Appium.E_Commerce_TestCase_3">
         <methods>
-          <include name="dragAndDropGesture"/>
+          <include name="fillForm"/>
         </methods>
-      </class> <!-- mobileautomation.Appium.DragAndDrop -->
+      </class> <!-- mobileautomation.Appium.E_Commerce_TestCase_3 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

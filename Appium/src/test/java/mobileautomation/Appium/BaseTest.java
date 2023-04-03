@@ -51,8 +51,10 @@ public class BaseTest {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, Platform.ANDROID);
 		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 4");
+//		capabilities.setCapability(MobileCapabilityType.APP,
+//				"//Users//saibrahma.mutcherla//git//AppiumLearnings//Appium//src//test//java//resources//ApiDemos-debug.apk");
 		capabilities.setCapability(MobileCapabilityType.APP,
-				"//Users//saibrahma.mutcherla//eclipse-workspace//Appium//src//test//java//resources//ApiDemos-debug.apk");
+				"//Users//saibrahma.mutcherla//git//AppiumLearnings//Appium//src//test//java//resources//General-Store.apk");
 		capabilities.setCapability("noReset", false);
 		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
 		return capabilities;
@@ -92,6 +94,13 @@ public class BaseTest {
 			    "endY", endy
 			));
 		
+	}
+	
+	
+	public static double getFormatedAmount(String amount) {
+		
+		Double price = Double.parseDouble(amount);
+		return price;
 	}
 
 	@AfterClass

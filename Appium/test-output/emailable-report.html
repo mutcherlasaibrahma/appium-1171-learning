@@ -9,10 +9,65 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">9,811</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">1,684</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">mobileautomation.Appium.DragAndDrop</td><td><a href="#m0">dragAndDropGesture</a></td><td rowspan="1">1680290675219</td><td rowspan="1">9770</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">mobileautomation.Appium.E_Commerce_TestCase_3</td><td><a href="#m0">fillForm</a></td><td rowspan="1">1680544643539</td><td rowspan="1">1639</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">mobileautomation.Appium.DragAndDrop#dragAndDropGesture</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">mobileautomation.Appium.E_Commerce_TestCase_3#fillForm</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: An unknown server-side error occurred while processing the command. Original error: Error executing adbExec. Original error: &apos;Command &apos;/Users/saibrahma.mutcherla/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell &apos;settings delete global hidden_api_policy_pre_p_apps;settings delete global hidden_api_policy_p_apps;settings delete global hidden_api_policy&apos;&apos; exited with code 2&apos;; Command output: cmd: Failure calling service settings: Failed transaction (2147483646)
+cmd: Failure calling service settings: Failed transaction (2147483646)
+cmd: Failure calling service settings: Failed transaction (2147483646)
+ 
+Host info: host: &apos;ATMECSINLT-773.local&apos;, ip: &apos;fe80:0:0:0:1066:194a:d4b1:4c36%en0&apos;
+Build info: version: &apos;4.8.3&apos;, revision: &apos;e5e76298c3&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.2.1&apos;, java.version: &apos;11.0.18&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, newSession {capabilities=[{appium:app=//Users//saibrahma.mutcherla//git//AppiumLearnings//Appium//src//test//java//resources//General-Store.apk, appium:automationName=UIAutomator2, appium:deviceName=Pixel 4, appium:noReset=false, platformName=ANDROID}], desiredCapabilities=Capabilities {app: //Users//saibrahma.mutcherl..., automationName: UIAutomator2, deviceName: Pixel 4, noReset: false, platformName: ANDROID}}]
+Capabilities {app: //Users//saibrahma.mutcherl..., automationName: UIAutomator2, deviceName: Pixel 4, noReset: false, platformName: ANDROID}
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
+	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:194)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:229)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:80)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:92)
+	at io.appium.java_client.android.AndroidDriver.&lt;init&gt;(AndroidDriver.java:117)
+	at mobileautomation.Appium.BaseTest.setup(BaseTest.java:35)
+	at mobileautomation.Appium.E_Commerce_TestCase_3.fillForm(E_Commerce_TestCase_3.java:19)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
