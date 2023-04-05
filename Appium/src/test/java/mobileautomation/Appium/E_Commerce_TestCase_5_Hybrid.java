@@ -41,7 +41,7 @@ public class E_Commerce_TestCase_5_Hybrid extends BaseTest {
 		validatePriceOfProducts();
 		verifyTermsAndConditions();
 		submitOrder();
-		//getAvalibaleContextHandles();
+		getAvalibaleContextHandles();
 		tearDownServer();
 
 	}
@@ -130,16 +130,6 @@ public class E_Commerce_TestCase_5_Hybrid extends BaseTest {
 		WebElement btnProcessed = driver.findElement(By.id("com.androidsample.generalstore:id/btnProceed"));
 		btnProcessed.click();
 		Thread.sleep(6000);
-		Set<String>  contexts = driver.getContextHandles();
-		for(String contextName: contexts ) {
-			
-			System.out.println("the context name of the app is "+contextName);
-			
-		}
-		driver.context("WEBVIEW_com.androidsample.generalstore");
-		driver.findElement(By.name("q")).sendKeys("QA Automation For Mobile");
-		driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
-
 	}
 	
 	public static void getAvalibaleContextHandles() {
@@ -156,8 +146,8 @@ public class E_Commerce_TestCase_5_Hybrid extends BaseTest {
 		}
 		
 		driver.context("WEBVIEW_com.androidsample.generalstore");
-		driver.findElement(By.name("Q")).sendKeys("QA Automation For Mobile");
-		driver.findElement(By.name("Q")).sendKeys(Keys.ENTER);
+		driver.findElement(By.name("q")).sendKeys("QA Automation For Mobile");
+		driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
 		driver.pressKey(new KeyEvent(AndroidKey.BACK));
 		// Get back to native app
 		driver.context("NATIVE_APP");
