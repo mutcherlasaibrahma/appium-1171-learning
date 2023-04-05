@@ -17,6 +17,7 @@ import com.google.common.collect.ImmutableMap;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -34,6 +35,10 @@ public class BaseTest {
 		setUpServer();
 		driver = new AndroidDriver(service.getUrl(), setCapabilities());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+//		UiAutomator2Options options = new UiAutomator2Options();
+//		options.setChromedriverExecutable("//Users//saibrahma.mutcherla//Documents//Chrome_Driver_69//chromedriver");
+//		driver = new AndroidDriver(service.getUrl(), options);
 	}
 
 	public void setUpServer() {
@@ -57,10 +62,12 @@ public class BaseTest {
 				"//Users//saibrahma.mutcherla//git//AppiumLearnings//Appium//src//test//java//resources//General-Store.apk");
 		capabilities.setCapability("noReset", false);
 		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
+		capabilities.setCapability("chromedriverExecutable","//Users//saibrahma.mutcherla//Documents//Chrome_Driver_69//chromedriver");
+
 		return capabilities;
 	}
 
-	public void longPressAction(WebElement element) {
+	public static void longPressAction(WebElement element) {
 
 		((JavascriptExecutor) driver).executeScript("mobile: longClickGesture",
 				ImmutableMap.of("elementId", ((RemoteWebElement) element).getId(), "duration", 2000));
@@ -99,7 +106,7 @@ public class BaseTest {
 	
 	public static double getFormatedAmount(String amount) {
 		
-		Double price = Double.parseDouble(amount);
+		Double price = Double.parseDouble(amount.substring(1));
 		return price;
 	}
 
