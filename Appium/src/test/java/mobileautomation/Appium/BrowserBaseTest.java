@@ -7,24 +7,17 @@ import java.time.Duration;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Platform;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebElement;
 
-import com.google.common.collect.ImmutableMap;
-
-import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 
-public class BaseTest {
+public class BrowserBaseTest {
 
 	public static AppiumDriverLocalService service;
 	public static AndroidDriver driver;
@@ -36,9 +29,6 @@ public class BaseTest {
 		driver = new AndroidDriver(service.getUrl(), setCapabilities());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
-//		UiAutomator2Options options = new UiAutomator2Options();
-//		options.setChromedriverExecutable("//Users//saibrahma.mutcherla//Documents//Chrome_Driver_69//chromedriver");
-//		driver = new AndroidDriver(service.getUrl(), options);
 	}
 
 	public void setUpServer() {
@@ -56,54 +46,13 @@ public class BaseTest {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, Platform.ANDROID);
 		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 4");
-//		capabilities.setCapability(MobileCapabilityType.APP,
-//				"//Users//saibrahma.mutcherla//git//AppiumLearnings//Appium//src//test//java//resources//ApiDemos-debug.apk");
-		capabilities.setCapability(MobileCapabilityType.APP,
-				"//Users//saibrahma.mutcherla//git//AppiumLearnings//Appium//src//test//java//resources//General-Store.apk");
+		capabilities.setCapability("browserName","Chrome");
 		capabilities.setCapability("noReset", false);
-		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
 		capabilities.setCapability("chromedriverExecutable","//Users//saibrahma.mutcherla//Documents//Chrome_Driver_69//chromedriver");
 
 		return capabilities;
 	}
 
-	public static void longPressAction(WebElement element) {
-
-		((JavascriptExecutor) driver).executeScript("mobile: longClickGesture",
-				ImmutableMap.of("elementId", ((RemoteWebElement) element).getId(), "duration", 2000));
-
-	}
-
-	public void scrollActionToEnd() {
-
-		// when no prior idea
-		boolean canScrollMore;
-		do {
-			canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap
-					.of("left", 100, "top", 100, "width", 200, "height", 200, "direction", "down", "percent", 3.0));
-		} while (canScrollMore);
-	}
-	
-	public void swipeAction(WebElement element,String direction ) {
-		
-		((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of("elementId", 
-				((RemoteWebElement) element).getId(), "duration", 2000,
-			    "direction", direction,
-			    "percent", 0.75
-			));
-		
-	}
-	
-	public void dragAndDrop(WebElement elementToBeDraggedAndDropped,int endx,int endy) {
-		((JavascriptExecutor) driver).executeScript("mobile: dragGesture", ImmutableMap.of(
-			    "elementId", ((RemoteWebElement) elementToBeDraggedAndDropped).getId(),
-			    "endX", endx,
-			    "endY", endy
-			));
-		
-	}
-	
-	
 	public static double getFormatedAmount(String amount) {
 		
 		Double price = Double.parseDouble(amount.substring(1));

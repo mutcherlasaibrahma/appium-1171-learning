@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="mobileautomation.Appium.E_Commerce_TestCase_5_Hybrid">
+      <class name="mobileautomation.Appium.MobileBrowserTest">
         <methods>
-          <include name="fillForm"/>
+          <include name="browserTest"/>
         </methods>
-      </class> <!-- mobileautomation.Appium.E_Commerce_TestCase_5_Hybrid -->
+      </class> <!-- mobileautomation.Appium.MobileBrowserTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

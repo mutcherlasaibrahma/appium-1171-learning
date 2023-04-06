@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-05T18:51:31 IST" name="Default suite" finished-at="2023-04-05T18:52:47 IST" duration-ms="75968">
+  <suite started-at="2023-04-06T17:32:57 IST" name="Default suite" finished-at="2023-04-06T17:33:20 IST" duration-ms="22801">
     <groups>
     </groups>
-    <test started-at="2023-04-05T18:51:31 IST" name="Default test" finished-at="2023-04-05T18:52:47 IST" duration-ms="75968">
-      <class name="mobileautomation.Appium.E_Commerce_TestCase_5_Hybrid">
-        <test-method signature="fillForm()[pri:0, instance:mobileautomation.Appium.E_Commerce_TestCase_5_Hybrid@563f38c4]" started-at="2023-04-05T18:51:31 IST" name="fillForm" finished-at="2023-04-05T18:52:47 IST" duration-ms="75782" status="PASS">
+    <test started-at="2023-04-06T17:32:57 IST" name="Default test" finished-at="2023-04-06T17:33:20 IST" duration-ms="22801">
+      <class name="mobileautomation.Appium.MobileBrowserTest">
+        <test-method signature="browserTest()[pri:0, instance:mobileautomation.Appium.MobileBrowserTest@7d0b7e3c]" started-at="2023-04-06T17:32:57 IST" name="browserTest" finished-at="2023-04-06T17:33:20 IST" duration-ms="22749" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fillForm -->
-      </class> <!-- mobileautomation.Appium.E_Commerce_TestCase_5_Hybrid -->
+        </test-method> <!-- browserTest -->
+      </class> <!-- mobileautomation.Appium.MobileBrowserTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
